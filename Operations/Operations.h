@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Daniel Thorpe. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import Foundation;
 
 //! Project version number for Operations.
 FOUNDATION_EXPORT double OperationsVersionNumber;
