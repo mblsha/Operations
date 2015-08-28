@@ -12,11 +12,12 @@ session Advanced NSOperations: https://developer.apple.com/videos/wwdc/2015/?id=
   s.license           = 'MIT'
   s.author            = { "Daniel Thorpe" => "@danthorpe" }
   s.source            = { :git => "https://github.com/danthorpe/Operations.git", :tag => s.version.to_s }
-  s.module_name       = 'Operations'
   s.social_media_url  = 'https://twitter.com/danthorpe'
   s.requires_arc      = true
-  s.platform          = :ios, '8.0'
+  s.ios.deployment_target = "8.0"
+  s.osx.deployment_target = "10.10"
   s.source_files      = 'Operations/**/*.{swift,m,h}'
+  s.osx.exclude_files = "Operations/**/*{RemoteNotification,UserConfirmation,AddressBook,LocationCondition,BackgroundObserver,NetworkObserver,AlertOperation,LocationOperation}*"
 
 end
 

@@ -205,6 +205,7 @@
 		65FABD5F1B600DA40072B599 /* BlockCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockCondition.swift; sourceTree = "<group>"; };
 		795D4BBF1B8EF42F001B80B0 /* Operations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Operations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		795D4BC81B8EF42F001B80B0 /* OperationsOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OperationsOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		795D4C1B1B8F0A33001B80B0 /* Operations.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Operations.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +258,7 @@
 		657729531B3D9E0E00B5D153 = {
 			isa = PBXGroup;
 			children = (
+				795D4C1B1B8F0A33001B80B0 /* Operations.podspec */,
 				6577295F1B3D9E0E00B5D153 /* Operations */,
 				6577296C1B3D9E0E00B5D153 /* OperationsTests */,
 				6577295E1B3D9E0E00B5D153 /* Products */,
@@ -1011,6 +1013,7 @@
 				795D4BD11B8EF42F001B80B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		795D4BD51B8EF42F001B80B0 /* Build configuration list for PBXNativeTarget "OperationsOSXTests" */ = {
 			isa = XCConfigurationList;
@@ -1019,6 +1022,7 @@
 				795D4BD31B8EF42F001B80B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
