@@ -166,6 +166,7 @@ public class Operation: NSOperation {
             execute()
         }
         else {
+            dump("\(self.dynamicType) - \(self.name) - \(cancelled)")
             finish()
         }
     }

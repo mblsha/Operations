@@ -67,6 +67,10 @@ class TestQueueDelegate: OperationQueueDelegate {
         did_numberOfErrorThatOperationDidFinish = errors.count
         didFinishOperation?(operation, errors)
     }
+
+    func operationQueue(queue: OperationQueue, operationDidCancel operation: NSOperation, withErrors errors: [ErrorType]) {
+      // FIXME
+    }
 }
 
 class OperationTests: XCTestCase {

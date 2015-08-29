@@ -87,6 +87,7 @@ extension GroupOperation: OperationQueueDelegate {
     }
 
     public func operationQueue(queue: OperationQueue, operationDidCancel operation: NSOperation, withErrors errors: [ErrorType]) {
+        dump("\(operation.name) canceled \(errors)")
         _aggregateErrors.appendContentsOf(errors)
         if !_queue.suspended {
             _queue.suspended = true
