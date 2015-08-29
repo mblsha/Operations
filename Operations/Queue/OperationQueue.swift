@@ -11,6 +11,7 @@ import Foundation
 public protocol OperationQueueDelegate: class {
     func operationQueue(queue: OperationQueue, willAddOperation operation: NSOperation)
     func operationQueue(queue: OperationQueue, operationDidFinish operation: NSOperation, withErrors errors: [ErrorType])
+    func operationQueue(queue: OperationQueue, operationDidCancel operation: NSOperation, withErrors errors: [ErrorType])
 }
 
 public class OperationQueue: NSOperationQueue {
@@ -28,6 +29,11 @@ public class OperationQueue: NSOperationQueue {
                 finishHandler: { [weak self] (operation, errors) in
                     if let q = self {
                         q.delegate?.operationQueue(q, operationDidFinish: operation, withErrors: errors)
+                    }
+                },
+                cancelHandler: { [weak self] (operation, errors) in
+                    if let q = self {
+                        q.delegate?.operationQueue(q, operationDidCancel: operation, withErrors: errors)
                     }
                 }
             )
@@ -68,6 +74,8 @@ public class OperationQueue: NSOperationQueue {
                     queue.delegate?.operationQueue(queue, operationDidFinish: op, withErrors: [])
                 }
             }
+
+            // FIXME: We don't handle cancellation for NSOperations
         }
 
         delegate?.operationQueue(self, willAddOperation: op)

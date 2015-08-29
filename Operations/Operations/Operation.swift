@@ -189,7 +189,14 @@ public class Operation: NSOperation {
         
         cancel()
     }
-    
+
+    public override func cancel() {
+        if cancelled == false {
+            super.cancel()
+            observers.forEach { $0.operationDidCancel(self, errors: _internalErrors) }
+        }
+    }
+
     public final func produceOperation(operation: NSOperation) {
         for o in observers { o.operation(self, didProduceOperation: operation) }
     }

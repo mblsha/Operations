@@ -51,6 +51,11 @@ public struct LoggingObserver: OperationObserver {
         log("\(operationName(operation)): finished with \(detail).")
     }
 
+    public func operationDidCancel(operation: Operation, errors: [ErrorType]) {
+        let detail = errors.count > 0 ? "\(errors.count) error(s)" : "no errors"
+        log("\(operationName(operation)): cancelled with \(detail).")
+    }
+
     private func operationName(operation: Operation) -> String {
         if let name = operation.name {
             return "\(name)"

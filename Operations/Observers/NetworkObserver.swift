@@ -43,6 +43,10 @@ public class NetworkObserver: OperationObserver {
             NetworkIndicatorController.sharedInstance.networkActivityDidEnd()
         }
     }
+
+    public func operationDidCancel(operation: Operation, errors: [ErrorType]) {
+        // no-op
+    }
 }
 
 private class NetworkIndicatorController {

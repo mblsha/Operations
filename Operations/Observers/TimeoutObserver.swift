@@ -34,6 +34,10 @@ public struct TimeoutObserver: OperationObserver {
     public func operationDidFinish(operation: Operation, errors: [ErrorType]) {
         // no-op
     }
+
+    public func operationDidCancel(operation: Operation, errors: [ErrorType]) {
+        // no-op
+    }
 }
 
 

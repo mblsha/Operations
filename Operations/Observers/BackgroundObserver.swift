@@ -90,4 +90,8 @@ extension BackgroundObserver: OperationObserver {
     public func operationDidFinish(operation: Operation, errors: [ErrorType]) {
         endBackgroundTask()
     }
+
+    public func operationDidCancel(operation: Operation, errors: [ErrorType]) {
+        // no-op
+    }
 }

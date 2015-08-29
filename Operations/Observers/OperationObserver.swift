@@ -15,4 +15,6 @@ public protocol OperationObserver {
     func operation(operation: Operation, didProduceOperation newOperation: NSOperation)
     
     func operationDidFinish(operation: Operation, errors: [ErrorType])
+
+    func operationDidCancel(operation: Operation, errors: [ErrorType])
 }

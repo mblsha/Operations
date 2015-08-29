@@ -16,11 +16,13 @@ public struct BlockObserver: OperationObserver {
     let startHandler: StartHandler?
     let produceHandler: ProduceHandler?
     let finishHandler: FinishHandler?
+    let cancelHandler: FinishHandler?
 
-    public init(startHandler: StartHandler? = .None, produceHandler: ProduceHandler? = .None, finishHandler: FinishHandler? = .None) {
+    public init(startHandler: StartHandler? = .None, produceHandler: ProduceHandler? = .None, finishHandler: FinishHandler? = .None, cancelHandler: FinishHandler? = .None) {
         self.startHandler = startHandler
         self.produceHandler = produceHandler
         self.finishHandler = finishHandler
+        self.cancelHandler = cancelHandler
     }
 
     public func operationDidStart(operation: Operation) {
@@ -33,6 +35,10 @@ public struct BlockObserver: OperationObserver {
 
     public func operationDidFinish(operation: Operation, errors: [ErrorType]) {
         finishHandler?(operation, errors)
+    }
+
+    public func operationDidCancel(operation: Operation, errors: [ErrorType]) {
+        cancelHandler?(operation, errors)
     }
 }
 
