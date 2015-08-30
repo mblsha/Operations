@@ -13,9 +13,9 @@ public struct BlockObserver: OperationObserver {
     public typealias ProduceHandler = (Operation, NSOperation) -> Void
     public typealias FinishHandler = (Operation, [ErrorType]) -> Void
 
-    let startHandler: StartHandler?
-    let produceHandler: ProduceHandler?
-    let finishHandler: FinishHandler?
+    public var startHandler: StartHandler?
+    public var produceHandler: ProduceHandler?
+    public var finishHandler: FinishHandler?
 
     public init(startHandler: StartHandler? = .None, produceHandler: ProduceHandler? = .None, finishHandler: FinishHandler? = .None) {
         self.startHandler = startHandler
