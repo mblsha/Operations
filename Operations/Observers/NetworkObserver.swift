@@ -6,6 +6,7 @@
 //  Copyright © 2015 Daniel Thorpe. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 public protocol NetworkActivityIndicatorInterface {
